@@ -11,11 +11,11 @@ function App(){//declare functional component named App
     
     const [weather, setWeather] = useState(null);//weather is declared, setWeather is used to update it
 
-    const apiKey = '1ccc73b386fa474b95e31343241202';
+    const apiKey = 'YOUR_API_KEY';
 
     const fetchWeather = async () => {//fetchWeather is responsible for fetching weather data from WeatherAPI.com
         try{
-            const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=1ccc73b386fa474b95e31343241202&q=${city}&aqi=no`); //sends an HTTP 'get' request to the API using axios. 
+            const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key={apiKey}&q=${city}&aqi=no`); //sends an HTTP 'get' request to the API using axios. 
             //Awaits the response and stores it in the 'response' variable. apiKey and city are interpolated into the URL to request specific data.
             
             setWeather(response.data);//updates weather state variable with the retrieved data (contained in response.data)
